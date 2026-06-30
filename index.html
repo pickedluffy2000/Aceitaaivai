@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bom dia, Gatinha 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .painel {
+      position: relative;
+      background-color: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 30px;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+    }
+
+    h1 {
+      color: #e91e63;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6em;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1em;
+      margin: 10px 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 10px;
+    }
+
+    .botoes {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    #sim, #nao {
+      height: 45px;
+      width: 90px;
+      border-radius: 20px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    #sim {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+    }
+
+    #sim:hover {
+      transform: scale(1.1);
+    }
+
+    #nao {
+      background-color: #aaa;
+      color: white;
+      border: none;
+      position: absolute;
+      left: 100px;
+      top: 0;
+    }
+
+    /* Corações */
+    .heart {
+      position: fixed;
+      top: -30px;
+      font-size: 24px;
+      animation: fall linear;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3em;
+      }
+
+      h2 {
+        font-size: 0.95em;
+      }
+
+      #sim, #nao {
+        width: 80px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="painel" id="painel">
+    <h1>Bom dia, Gatinha 💖</h1>
+    <img src="./kotik.gif" alt="Gatinho fofo" />
+    <h2>Bora levantar, tomar um café, e iniciar o dia. quero ver você toda gostosona malhando mais tarde e me deixando pirado kkkkk  e beba bastante aguá😘</h2>
+
+    
+  </div>
+
+  <script>
+    const botaoNao = document.getElementById('nao');
+    const botoes = document.querySelector('.botoes');
+
+    function fuja() {
+      const maxX = botoes.offsetWidth - botaoNao.offsetWidth;
+      const maxY = 100; // dentro da área dos botões
+
+      const randX = Math.random() * maxX;
+      const randY = Math.random() * maxY;
+
+      botaoNao.style.left = `${randX}px`;
+      botaoNao.style.top = `${randY}px`;
+    }
+
+    // Faz o botão fugir ao tentar clicar ou encostar
+    botaoNao.addEventListener('mouseover', fuja);
+    botaoNao.addEventListener('touchstart', fuja);
+    botaoNao.addEventListener('click', fuja);
+
+    // Corações caindo
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }, 400);
+  </script>
+
+</body>
+</html>
