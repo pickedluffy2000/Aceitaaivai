@@ -61,7 +61,7 @@
       /* Removido position relative daqui para o botão Não poder voar pela tela toda */
     }
 
-    #sim, #nao {
+    #confirmar, #nao {
       height: 45px;
       width: 90px;
       border-radius: 20px;
@@ -72,13 +72,13 @@
       z-index: 10;
     }
 
-    #sim {
+    #confirmar {
       background-color: #e91e63;
       color: white;
       border: none;
     }
 
-    #sim:hover {
+    #confirmar:hover {
       transform: scale(1.1);
     }
 
@@ -114,7 +114,7 @@
         font-size: 0.95em;
       }
 
-      #sim, #nao {
+      #confirmar, #nao {
         width: 80px;
         font-size: 0.9em;
       }
@@ -124,15 +124,15 @@
 <body>
 
   <div class="painel" id="painel">
-    <h1>Boa tarde, Gatinha 💖</h1>
+    <h1>Bom dia, Gatinha 💖</h1>
     <!-- Lembre-se de ter a imagem 'kotik.gif' na mesma pasta, ou usar uma URL direta -->
     <img src="./kotik.gif" alt="Gatinho fofo" />
-    <h2>Vamos abrindo um espaço ai na tua agenda, quero sair com você essa semana. Aceita?</h2>
+    <h2>Fica bem bonita, pois te pego as 18:00</h2>
 
     <!-- AQUI ESTÃO OS BOTÕES -->
     <div class="botoes">
       <!-- TROQUE O NÚMERO ABAIXO PELO SEU (COM DDD). Ex: 5511999999999 -->
-      <button id="sim" onclick="window.location.href='https://wa.me/5521994048385?text=Oi!%20Eu%20aceito%20sair%20com%20voc%C3%AA!%20%E2%9D%A4%EF%B8%8F'">Sim!</button>
+     <button id="confirmar" onclick="window.location.href='https://wa.me/5521994048385?text=oi%20bom%20dia%2C%20confirmo%20100%25%20e%20estarei%20linda.'">confirmar!</button>
       <button id="nao">Não</button>
     </div>
     
